@@ -4,10 +4,16 @@ import pletina from "./views/pletina.vue";
 </script>
 
 <template>
-  <ecualizador />
-  <pletina />
+  <div id="contenedor-padre">
+    <pletina />
+    <ecualizador />
+  </div>
 </template>
 
 <style scoped>
-
+#contenedor-padre {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
 </style>

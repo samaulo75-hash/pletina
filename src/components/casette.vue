@@ -3,12 +3,14 @@
     import cancion1 from './../assets/01. New Jeans.flac'
     import cancion2 from './../assets/01. Supernatural.flac'
     import cancion3 from './../assets/101. OMG.flac'
+    import cancion4 from './../assets/09 Ladyfingers.mp3'
 
 // Playlist (usa rutas reales a tus archivos descargados)
 const playlist = [
-  cancion3,
+  cancion1,
   cancion2,
-  cancion1
+  cancion3,
+  cancion4
 ]
 
 const currentSongIndex = ref(0)
@@ -91,11 +93,11 @@ const nextSong = () => {
                 </div>
             </div>
             <div class="contenedorBotones">
-                <button id="play" @click="playSong">⏯</button>
-                <button id="pause" @click="pauseSong">⏸</button>
-                <button id="record" @click="stopSong">⏺</button>
-                <button id="next" @click="nextSong">⏭</button>
-                <button id="rewind" @click="rewindSong">⏪︎</button>
+                <button id="play" class="estiloBotonesCasette" @click="playSong">⏯</button>
+                <button id="pause" class="estiloBotonesCasette" @click="pauseSong">⏸</button>
+                <button id="record" class="estiloBotonesCasette" @click="stopSong">⏺</button>
+                <button id="next" class="estiloBotonesCasette" @click="nextSong">⏭</button>
+                <button id="rewind" class="estiloBotonesCasette" @click="rewindSong">⏪︎</button>
             </div>
         </div>
 
@@ -145,8 +147,8 @@ const nextSong = () => {
 
 #casette {
     background-color: black;
-    width: 180px;
-    height: 100px;
+    width: 270px;
+    height: 150px;
     border-radius: 10px;
     justify-content: center;
 }
@@ -155,59 +157,46 @@ const nextSong = () => {
     display: flex;
 }
 
-#play {
+.estiloBotonesCasette {
     border-radius: 10px 10px 10px 10px;
     border: none;
-    background-color: rgb(160, 160, 0);
-    width: 35px;
-    height: 30px;
+    width: 45px;
+    height: 40px;
     margin-top: 5px;
     box-shadow: 3px 3px 5px;
+    cursor: pointer;
+}
+
+#play {
+    background-color: rgb(160, 160, 0);
 }
 
 #pause {
-    border-radius: 10px 10px 10px 10px;
-    border: none;
     background-color: rgb(107, 0, 0);
-    width: 35px;
-    height: 30px;
-    margin-top: 5px;
-    box-shadow: 3px 3px 5px;
 }
 
 #record {
-    border-radius: 10px 10px 10px 10px;
-    border: none;
     background-color: rgb(0, 0, 105);
-    width: 35px;
-    height: 30px;
-    margin-top: 5px;
-    box-shadow: 3px 3px 5px;
 }
 
 #next {
-    border-radius: 10px 10px 10px 10px;
-    border: none;
     background-color: rgb(141, 92, 0);
-    width: 35px;
-    height: 30px;
-    margin-top: 5px;
-    box-shadow: 3px 3px 5px;
 }
 
 #rewind {
     border-radius: 10px 10px 10px 10px;
     border: none;
     background-color: rgb(0, 100, 0);
-    width: 35px;
-    height: 30px;
+    width: 45px;
+    height: 40px;
     margin-top: 5px;
     box-shadow: 3px 3px 5px;
+    cursor: pointer;
 }
 
 .botonCasette1, .botonCasette2 {
-    height: 17px;
-    width: 17px;
+    height: 25px;
+    width: 25px;
     background-color: white;
     border-radius: 50px;
     padding: 5px;
@@ -229,8 +218,8 @@ const nextSong = () => {
     background-color: grey;
     border-radius: 10px;
     display: flex;
-    width: 80px;
-    height: 25px;
+    width: 120px;
+    height: 35px;
     padding: 0px 5px 0px 5px;
 }
 
@@ -238,29 +227,31 @@ const nextSong = () => {
     background-color: rgb(64, 32, 0);
     border-radius: 5px;
     border: 1px solid white;
-    height: 60px;
-    width: 160px;
+    height: 100px;
+    width: 250px;
     margin: 10px 0px 0px 10px;
-    padding: 15px 0px 0px 40px;
+    place-items: center;
+    place-content: center;
 }
 
 .contenedorLineaCasette {
     display: flex;
     gap: 5px;
-    margin: 0px 0px 0px 10px;
+    justify-content: center;
 }
 
 .lineaCasette {
     background-color: grey;
     border-radius: 20px;
-    height: 8px;
-    width: 50px;
-    margin: 10px 0px 0px 0px;
+    height: 10px;
+    width: 80px;
+    margin-top: 15px;
 }
 
 .contenedorBotones {
+    margin-top: 5%;
     display: flex;
-    gap: 1px;
+    gap: 10px;
     justify-content: center;
 }
 
